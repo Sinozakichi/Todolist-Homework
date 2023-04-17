@@ -1,10 +1,10 @@
 
-function buttonadd() {
+function buttonAdd() {
     if(document.getElementsByTagName('input')[0].value!=""){
         var sure=confirm('確定多一件事?');
         if(sure){
             alert('好啦要更忙了QQ');
-        textadd(); 
+        textAdd(); 
         console.log(document.getElementsByTagName('input')[0].value)     
         }       
     }
@@ -13,31 +13,31 @@ function buttonadd() {
     }
 }
 
-function textadd(){     
-    var adiv=document.createElement('div');
-    adiv.setAttribute('class','center');
+function textAdd(){     
+    var newDiv=document.createElement('div');
+    newDiv.setAttribute('class','center');
     
-    var newinput=document.createElement('input');
-    newinput.setAttribute('type','text');
+    var newInput=document.createElement('input');
+    newInput.setAttribute('type','text');
     
-    var btndelete=document.createElement('button');
-    btndelete.addEventListener('click',textdelete,false)
-    btndelete.innerText="完成";
+    var btnDelete=document.createElement('button');
+    btnDelete.addEventListener('click',textDelete,false)
+    btnDelete.innerText="完成";
     
-    adiv.append(newinput);
-    adiv.append(btndelete);
+    newDiv.append(newInput);
+    newDiv.append(btnDelete);
 
-    document.getElementsByName('first')[0].after(adiv);
-    newinput.value=document.getElementsByTagName('input')[0].value;
+    document.getElementsByName('first')[0].after(newDiv);
+    newInput.value=document.getElementsByTagName('input')[0].value;
     document.getElementsByTagName('input')[0].value=""; 
 }
 
-function textdelete(e){
-    var suredelete =confirm('完成了嗎?');
-    var deletething=e.target.parentElement;
-        if(suredelete){
+function textDelete(e){
+    var sureDelete =confirm('完成了嗎?');
+    var deleteThing=e.target.parentElement;
+        if(sureDelete){
             alert('解決了YA!');            
-            deletething.remove();
+            deleteThing.remove();
         } 
 }  
     
